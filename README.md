@@ -1,4 +1,4 @@
-# Team : BestGo
+# Team BestGo Project
 
 # Members
 
