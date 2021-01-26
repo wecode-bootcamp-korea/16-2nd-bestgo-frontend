@@ -30,8 +30,8 @@ class GosuList extends Component {
       .then((result) => this.setState({ data: result.masterList }));
   };
 
-  goDetailPage = () => {
-    this.props.history.push(`/search/detail/${this.props.id}`);
+  goDetailPage = (id) => {
+    this.props.history.push(`/search/detail/${id}`);
   };
 
   filterHandle = (e) => {
@@ -57,7 +57,7 @@ class GosuList extends Component {
               <GosuProfile>
                 <img src={item.profileImg} alt="고수프로필이미지" />
               </GosuProfile>
-              <GosuInfo onClick={this.goDetailPage}>
+              <GosuInfo onClick={() => this.goDetailPage(item.id)}>
                 <P>{item.name}</P>
                 <Span>{item.introduction}</Span>
                 <StarContainer>
