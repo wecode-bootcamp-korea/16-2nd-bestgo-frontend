@@ -4,11 +4,11 @@ import { GOSU_INFORMATION } from "../Data/Data";
 
 class GosuInfo extends Component {
   state = {
-    gosuinfo: [],
+    gosuinfo: {},
   };
 
   componentDidMount() {
-    fetch("http://10.58.4.216:8000/users/profile/21")
+    fetch(`http://10.58.0.86:8000/users/profile/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((result) => this.setState({ gosuinfo: result.profile[0] }));
   }
