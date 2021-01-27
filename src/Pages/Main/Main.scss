@@ -1,0 +1,125 @@
+.Main {
+  font-size: 16px;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    background-image: url(https://images.unsplash.com/photo-1520085601670-ee14aa5fa3e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80);
+    font-size: 20px;
+
+    h1 {
+      text-align: center;
+      font-weight: 500;
+      font-size: 2.5em;
+      color: black;
+    }
+
+    p {
+      margin: 20px 0px;
+      text-align: center;
+      font-size: 1em;
+      color: black;
+    }
+
+    .searchBar {
+      display: flex;
+      width: 670px;
+      height: 55px;
+
+      .search {
+        width: 80%;
+        padding: 2px;
+        height: 55px;
+        line-height: 1.5;
+        cursor: text;
+        font-size: 16px;
+        color: #737373;
+        border: 1px solid #e1e1e1;
+        background-color: #fff;
+      }
+
+      button {
+        width: 20%;
+        color: #fff;
+        background-color: #00c7ae;
+        font-size: 1em;
+        font-weight: 500;
+      }
+    }
+  }
+  .Category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fafafa;
+
+    .categoryBox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      width: 165px;
+      height: 90px;
+      cursor: pointer;
+
+      img {
+        width: 52px;
+      }
+
+      label {
+        margin-top: 10px;
+        text-align: center;
+        line-height: 1.5rem;
+        font-weight: 500;
+      }
+    }
+  }
+  .Service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      padding: 50px 0px;
+      font-size: 40px;
+      text-align: center;
+    }
+
+    .cardArea {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1500px;
+
+      .cardBox {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        cursor: pointer;
+
+        img {
+          width: 370px;
+          height: 150px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        label {
+          width: 370px;
+          padding: 20px;
+          text-align: center;
+          line-height: 50px;
+          font-weight: 500;
+          font-size: 25px;
+          box-shadow: 0 0 0 3px#ececec;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+      }
+    }
+  }
+}
