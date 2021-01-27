@@ -1,7 +1,7 @@
 import React from "react";
 
-function Main() {
-  return <div className="Main">호익이는 잘생겼다.</div>;
+function Main(props) {
+  return <div></div>;
 }
 
 export default Main;
