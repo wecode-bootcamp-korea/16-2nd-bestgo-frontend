@@ -1,0 +1,208 @@
+.Request {
+  header {
+    background-image: url(https://images.unsplash.com/photo-1503437313881-503a91226402?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80);
+    .lessonHeader {
+      margin: 0px auto;
+      padding: 70px 0px 100px 0px;
+      width: 970px;
+
+      h1 {
+        font-size: 50px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .pointBox {
+        margin-top: 15px;
+        display: flex;
+
+        span {
+          margin-top: 5px;
+          color: #ffce21;
+          font-size: 20px;
+          font-weight: 500;
+        }
+        .starBox {
+          margin-left: 5px;
+          position: relative;
+          width: 160px;
+          .star {
+            background-image: url("./star.png");
+            height: 32px;
+          }
+          .blackstar {
+            position: absolute;
+            background-image: url("./starblack.png");
+            width: 100%;
+            height: 32px;
+            opacity: 85%;
+          }
+        }
+      }
+
+      .totalWrapper {
+        display: flex;
+        margin-top: 30px;
+        color: #fff;
+        font-size: 20px;
+
+        .totalBox {
+          padding-right: 20px;
+          padding-left: 20px;
+
+          &:first-child {
+            padding-left: 0px;
+          }
+          &:nth-child(2) {
+            border-left: 1px solid #737373;
+            border-right: 1px solid #737373;
+          }
+        }
+      }
+    }
+  }
+  .formArea {
+    display: flex;
+    padding-bottom: 30px;
+
+    form {
+      margin: -30px 0px 20px auto;
+      padding: 40px;
+      width: 560px;
+      border-radius: 10px;
+      border: 1px solid #e1e1e1;
+      background-color: #fff;
+
+      .percentBar {
+        // width: 480px;
+        height: 5px;
+        background-color: #09c7ae;
+      }
+
+      p {
+        margin-top: 20px;
+        text-align: center;
+        color: #00c7ae;
+      }
+
+      h4 {
+        margin: 50px 0px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      .questionWrapper {
+        .questionBox {
+          padding: 20px;
+          width: 100%;
+          border: 1px solid #f2f2f2;
+          border-bottom: none;
+
+          &:last-child {
+            border-bottom: 1px solid #f2f2f2;
+          }
+
+          input {
+            width: 20px;
+            height: 20px;
+          }
+
+          label {
+            margin-left: 20px;
+            font-size: 20px;
+          }
+        }
+        .regionsBox {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+          width: 100%;
+          border: 1px solid #f2f2f2;
+          border-bottom: none;
+
+          select {
+            width: 200px;
+            height: 30px;
+          }
+        }
+      }
+
+      .btnBox {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 30px;
+        width: 100%;
+
+        .green.Btn {
+          background-color: #00c7ae;
+          color: #fff;
+        }
+
+        .Btn {
+          margin-left: 20px;
+          height: 3rem;
+          width: 7.5rem;
+          background-color: #fff;
+          color: #00c7ae;
+          border-radius: 5px;
+          border: 1px solid #f2f2f2;
+        }
+      }
+    }
+    .Aside {
+      margin: 40px auto 0px 40px;
+
+      .asideInfo {
+        margin-bottom: 50px;
+
+        h4 {
+          margin-bottom: 20px;
+          font-size: 25px;
+        }
+
+        p {
+          font-size: 16px;
+          color: #737373;
+        }
+      }
+    }
+  }
+  .reviewArea {
+    padding: 20px;
+    background-color: #fafafa;
+
+    .reviewWrapper {
+      margin: 50px auto;
+      width: 970px;
+
+      h3 {
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+
+      .reviewBox {
+        margin-top: 20px;
+
+        .userBox {
+          display: flex;
+
+          h4 {
+            font-size: 18px;
+            font-weight: 600;
+          }
+
+          span {
+            margin-left: 10px;
+            color: #ffce21;
+          }
+        }
+
+        p {
+          margin-top: 10px;
+          color: #737373;
+        }
+      }
+    }
+  }
+}
