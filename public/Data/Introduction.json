@@ -1,0 +1,26 @@
+{
+  "CATEGORY": [
+    {
+      "maincategory": "숨고소개",
+      "subcategory": ["회사소개", "채용안내"]
+    },
+    {
+      "maincategory": "고객안내",
+      "subcategory": [
+        "이용안내",
+        "안전정책",
+        "예상금액",
+        "고수찾기",
+        "고수에게묻다"
+      ]
+    },
+    {
+      "maincategory": "고수안내",
+      "subcategory": ["이용안내", "고수가이드", "고수가입", "고수센터"]
+    },
+    {
+      "maincategory": "고객안내",
+      "subcategory": ["공지사항", "자주묻는질문"]
+    }
+  ]
+}
