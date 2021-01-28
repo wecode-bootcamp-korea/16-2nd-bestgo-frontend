@@ -1,0 +1,33 @@
+{"Reviews":[
+  {
+    "reviewsId":1,
+    "userName":"정지원",
+    "ratings":4.5,
+    "content": "지훈님의 코칭 덕분에 한단계 성장하였습니다 최고 너무 좋아요!"
+  },
+  {
+    "reviewsId":2,
+    "userName":"장준영",
+    "ratings": 1,
+    "content": "하.. 돈아깝네용"
+  },
+  {
+    "reviewsId":3,
+    "userName":"유호익",
+    "ratings": 5,
+    "content": "준식님의 올데이 리액트 짱짱!!!"
+  },
+  {
+    "reviewsId":4,
+    "userName":"김기열",
+    "ratings": 2,
+    "content": "관희님은 세션시간에 졸아요ㅡㅡ"
+  },
+  {
+    "reviewsId":5,
+    "userName":"박영호",
+    "ratings": 5,
+    "content": "지영님의 철저한 관리덕분에 성장했어요!"
+  }
+]
+}

@@ -1,0 +1,12 @@
+{"MESSAGE": "SUCCESS",
+  "DETAIL": 
+    {
+      "http://192.168.35.181:8000/services/details?serviceId=1":"http://192.168.35.181:8000/services/details?serviceId=1",
+      "name": "HTML",
+            "activeMaster": 3, 
+            "avgRating": 4.5,
+            "totalReview": 3,  
+            "totalRequest": 0  
+    }
+  
+}

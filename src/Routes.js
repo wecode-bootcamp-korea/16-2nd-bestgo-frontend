@@ -12,6 +12,7 @@ import RequestDetail from "./Pages/RequestDetail/RequestDetail";
 import Search from "./Pages/Search/Search";
 import SearchDetail from "./Pages/SearchDetail/SearchDetail";
 import Estimate from "./Pages/Estimate/Estimate";
+import Request from "./Pages/Request/Request";
 
 function Routes() {
   return (
@@ -19,7 +20,6 @@ function Routes() {
       <Switch>
         <Route exact path="/" component={Main} />
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/category" component={Main} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/find-password" component={FindPassword} />
         <Route exact path="/find-password/send" component={Send} />
@@ -27,8 +27,9 @@ function Routes() {
         <Route exact path="/requestpage" component={RequestPage} />
         <Route exact path="/requestpage/detail" component={RequestDetail} />
         <Route exact path="/search" component={Search} />
-        <Route exact path="/search/detail" component={SearchDetail} />
         <Route exact path="/estimate" component={Estimate} />
+        <Route exact path="/search/detail" component={SearchDetail} />
+        <Route exact path="/request/:serviceId" component={Request} />
       </Switch>
     </Router>
   );
