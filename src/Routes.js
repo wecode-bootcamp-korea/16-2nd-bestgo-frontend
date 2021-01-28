@@ -5,6 +5,7 @@ import reset from "styled-reset";
 import Login from "./Pages/Login/Login";
 // import Signup from "./Pages/Signup/Signup";
 import Main from "./Pages/Main/Main";
+import RequestPage from "./Pages/RequestPage/RequestPage";
 
 function Routes() {
   return (
@@ -12,8 +13,8 @@ function Routes() {
       <GlobalStyle />
       <Switch>
         <Route exact path="/" component={Main} />
-        {/* <Route exact path="/signup" component={Signup} /> */}
         <Route exact path="/login" component={Login} />
+        <Route exact path="/requestpage" component={RequestPage} />
       </Switch>
     </Router>
   );
