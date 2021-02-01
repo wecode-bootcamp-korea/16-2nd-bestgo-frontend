@@ -17,3 +17,5 @@ export const SERVER_DETAIL = `${SERVER}/services/requestDetail?requestId`;
 export const SERVER_POST = `${SERVER}/services/createQuotation?requestId`;
 export const SIGNIN_API = `${SERVER}/users/signin`;
 export const KAKAO_LOGIN_API = `${SERVER}/users/kakao_signin`;
+export const KAKAO_LOGIN_API = `${SERVER}/users/kakao_signin`;
+export const FIND_SEND = `${SERVER}/users/password_reset`;
