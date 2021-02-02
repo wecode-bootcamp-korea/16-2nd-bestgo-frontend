@@ -5,6 +5,7 @@ import Login from "./Pages/Login/Login";
 import Main from "./Pages/Main/Main";
 import RequestPage from "./Pages/RequestPage/RequestPage";
 import Footer from "./Components/Footer/Footer";
+import RequestDetail from "./Pages/RequestDetail/RequestDetail";
 
 function Routes() {
   return (
@@ -16,6 +17,7 @@ function Routes() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/requestpage" component={RequestPage} />
         <Route exact path="/footer" component={Footer} />
+        <Route exact path="/requestpage/detail" component={RequestDetail} />
       </Switch>
     </Router>
   );

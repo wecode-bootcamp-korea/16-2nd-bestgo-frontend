@@ -7,7 +7,7 @@ class FooterInfo extends Component {
   };
 
   componentDidMount() {
-    fetch("Data/Introduction.json")
+    fetch("/Data/Introduction.json")
       .then((res) => res.json())
       .then((result) => this.setState({ footerIntro: result.CATEGORY }));
   }

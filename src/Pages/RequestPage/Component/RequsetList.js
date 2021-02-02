@@ -1,4 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import { withRouter, Link } from "react-router-dom";
+import { SERVER_SERVICE } from "../../../config";
 import styled from "styled-components";
 
 class RequsetList extends Component {
@@ -7,49 +9,63 @@ class RequsetList extends Component {
   };
 
   componentDidMount() {
-    fetch("Data/userData.json")
+    fetch(SERVER_SERVICE, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
-      .then((requestList) => this.setState({ requestList }));
+      .then((result) => {
+        this.setState({ requestList: result.receivedRequests });
+      });
   }
 
   render() {
     const { requestList } = this.state;
 
     return (
-      <RequestListed>
-        {!!requestList &&
-          requestList.map((item, index) => {
-            return (
-              <RequsetContainer key={index}>
-                <UserContainer>
-                  <img src={item.userimg} alt="유저이미지" />
-                  <Description>
-                    <P>{item.userName}</P>
-                    <Span>{item.category}</Span>
-                    <Span>{item.address}</Span>
-                    <Spandes>
-                      {item.description.length > 58
-                        ? item.description.slice(0, 58) + "..."
-                        : item.description}
-                    </Spandes>
-                  </Description>
-                  <Information>
-                    <Span>{item.time}</Span>
-                    <button type="button">삭제</button>
-                  </Information>
-                </UserContainer>
-              </RequsetContainer>
-            );
-          })}
+      <RequestListed onClick={this.goDetailPage}>
+        {requestList?.map((item, index) => {
+          return (
+            <RequsetContainer
+              key={index}
+              onClick={() =>
+                this.props.history.push({
+                  pathname: "/requestpage/detail",
+                  state: { id: item.requestId },
+                })
+              }
+            >
+              <UserContainer>
+                <img src={item.requesterImage} alt="유저이미지" />
+                <Description>
+                  <P>{item.requester}</P>
+                  <Span>{item.service}</Span>
+                  <Span>{item.region}</Span>
+                  <Spandes>
+                    {item.choices.length > 58
+                      ? item.choices.slice(0, 58) + "..."
+                      : item.choices}
+                  </Spandes>
+                </Description>
+                <Information>
+                  <Span>{item.timeAgo}</Span>
+                  <button type="button">삭제</button>
+                </Information>
+              </UserContainer>
+            </RequsetContainer>
+          );
+        })}
       </RequestListed>
     );
   }
 }
 
-export default RequsetList;
+export default withRouter(RequsetList);
 
 const RequestListed = styled.div`
   margin: 30px auto;
+  cursor: pointer;
 `;
 
 const RequsetContainer = styled.div`
