@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import RequsetList from "./Component/RequsetList";
+import Footer from "../../Components/Footer/Footer";
 
 class RequestPage extends Component {
   render() {
     return (
-      <RequestPaged>
-        <Htag>받은요청</Htag>
-        <RequsetList />
-      </RequestPaged>
+      <>
+        <RequestPaged>
+          <Htag>받은요청</Htag>
+          <RequsetList />
+        </RequestPaged>
+        <Footer />
+      </>
     );
   }
 }
@@ -18,8 +22,7 @@ export default RequestPage;
 const RequestPaged = styled.div`
   width: 1100px;
   height: 100vh;
-  margin: 0 auto;
-  margin-top: 80px;
+  margin: 80px auto;
 `;
 
 const Htag = styled.div`
