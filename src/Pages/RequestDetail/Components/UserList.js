@@ -17,7 +17,6 @@ class UserList extends Component {
 
   render() {
     const { userlist } = this.state;
-    console.log(userlist);
 
     return (
       <UserLists>
