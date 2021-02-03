@@ -12,7 +12,11 @@ class UserList extends Component {
     const id = this.props.location.state.id;
     fetch(`${SERVER_DETAIL}=${id}`, {
       headers: {
+<<<<<<< HEAD
         Authorization: localStorage.getItem("token"),
+=======
+        Authorization: localStorage.getItem("master_token"),
+>>>>>>> 1321bac (Add: 요청서 상세페이지 레이아웃 및 기능  구현)
       },
     })
       .then((res) => res.json())

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import RequsetList from "./Component/RequsetList";
-import Footer from "../../Components/Footer/Footer";
 
 class RequestPage extends Component {
   render() {
@@ -20,7 +19,7 @@ export default RequestPage;
 
 const RequestPaged = styled.div`
   width: 1100px;
-  height: 100vh;
+  height: 100%;
   margin: 30px auto;
 `;
 
