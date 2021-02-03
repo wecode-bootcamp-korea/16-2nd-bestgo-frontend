@@ -3,9 +3,12 @@ export const SERVER = "http://54.175.222.189:8000";
 export const SERVER_SERVICE = `${SERVER}/services/receivedRequest`;
 export const SERVER_DETAIL = `${SERVER}/services/requestDetail?requestId`;
 export const SERVER_POST = `${SERVER}/services/createQuotation?requestId`;
+export const QUOTATIONLIST_POST = `${SERVER}/services/quotationList`;
+export const DETAIL_QUOTATIONLIST = `${SERVER}/services/detailQuotationList?requestId`;
+export const USER_PROFILE = `${SERVER}/users/profile`;
 
 //기열님 주소
-export const SERVER_LOCAL = "http://10.58.0.86:8000";
+export const SERVER_LOCAL = "http://10.58.1.14:8000";
 export const SIGNUP_API = `${SERVER}/users/signup`;
 export const SIGNIN_API = `${SERVER}/users/signin`;
 export const KAKAO_LOGIN_API = `${SERVER}/users/kakao_signin`;

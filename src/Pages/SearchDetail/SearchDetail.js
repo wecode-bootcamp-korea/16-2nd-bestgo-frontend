@@ -10,7 +10,6 @@ class SearchDetail extends Component {
         <SearchDetails>
           <GosuInfo />
         </SearchDetails>
-        <Footer />
       </>
     );
   }

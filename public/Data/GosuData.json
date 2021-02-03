@@ -1,0 +1,28 @@
+{
+  "GOSU_PROFILE": [
+    {
+      "gosuimg": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6ce6ed99-9249-4d9e-8ddf-56a22789f7f2/mainbg3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210202%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210202T161404Z&X-Amz-Expires=86400&X-Amz-Signature=e6d0610bb67f5d8fe30e6cbafcf49f4b4ec7bded68ea0393f44787d8e5997dd6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22mainbg3.png%22",
+      "gosuname": "유재현",
+      "rating": "5",
+      "employ": "300회",
+      "intro": "Wecode React 숨고싶은 고수",
+      "price": "100000원"
+    },
+    {
+      "gosuimg": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6ce6ed99-9249-4d9e-8ddf-56a22789f7f2/mainbg3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210202%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210202T161404Z&X-Amz-Expires=86400&X-Amz-Signature=e6d0610bb67f5d8fe30e6cbafcf49f4b4ec7bded68ea0393f44787d8e5997dd6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22mainbg3.png%22",
+      "gosuname": "장진욱",
+      "rating": "4.5",
+      "employ": "180회",
+      "intro": "Wecode Django 숨었다가 걸린 고수",
+      "price": "90000원"
+    },
+    {
+      "gosuimg": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6ce6ed99-9249-4d9e-8ddf-56a22789f7f2/mainbg3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210202%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210202T161404Z&X-Amz-Expires=86400&X-Amz-Signature=e6d0610bb67f5d8fe30e6cbafcf49f4b4ec7bded68ea0393f44787d8e5997dd6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22mainbg3.png%22",
+      "gosuname": "최수아",
+      "rating": "3",
+      "employ": "270회",
+      "intro": "Wecode 벨로그,계획 정리 고수",
+      "price": "120000원"
+    }
+  ]
+}

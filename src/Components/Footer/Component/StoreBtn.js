@@ -6,9 +6,9 @@ class FooterBtn extends Component {
   render() {
     return (
       <>
-        {BUTTON_ICON.map((itme) => {
+        {BUTTON_ICON.map((itme, index) => {
           return (
-            <Button>
+            <Button key={index}>
               <i className={itme.icon} />
               <span>{itme.name}</span>
             </Button>

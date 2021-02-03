@@ -15,6 +15,7 @@ import RequestDetail from "./Pages/RequestDetail/RequestDetail";
 import Search from "./Pages/Search/Search";
 import SearchDetail from "./Pages/SearchDetail/SearchDetail";
 import Estimate from "./Pages/Estimate/Estimate";
+import EstimateDetail from "./Pages/EstimateDetail/EstimateDetail";
 import Request from "./Pages/Request/Request";
 import MainNavbarLayout from "./Components/Navbar/MainNavbarLayout";
 import Navbar from "./Components/Navbar/Navbar";
@@ -40,10 +41,7 @@ function Routes(props) {
         <Route exact path="/find-password" component={FindPassword} />
         <Route exact path="/find-password/send" component={Send} />
         <Route exact path="/reset/:token" component={Reset} />
-        {/* <Route exact path="/:category" component={Main} /> */}
-        {/* <Route exact path="/signup" component={Signup} /> */}
         <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
         <Route exact path="/requestpage" component={RequestPage} />
         <Route exact path="/services/regions" component={BestRegions} />
         <Route exact path="/best-signup" component={BestSignup} />
@@ -52,12 +50,10 @@ function Routes(props) {
         <Route exact path="/footer" component={Footer} />
         <Route exact path="/requestpage/detail" component={RequestDetail} />
         <Route exact path="/search" component={Search} />
+        <Route exact path="/search/detail/:id" component={SearchDetail} />
         <Route exact path="/estimate" component={Estimate} />
-        <Route exact path="/search/detail" component={SearchDetail} />
+        <Route exact path="/estimate/detail" component={EstimateDetail} />
         <Route exact path="/request/:serviceId" component={Request} />
-        <Route exact path="/services/regions" component={BestRegions} />
-        <Route exact path="/best-signup" component={BestSignup} />
-        <Route exact path="/best" component={Best} />
       </Switch>
       <Footer />
     </Router>

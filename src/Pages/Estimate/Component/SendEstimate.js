@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+import { withRouter } from "react-router-dom";
+import { QUOTATIONLIST_POST } from "../../../config";
 import styled from "styled-components";
 
 class SendEstimated extends Component {
@@ -7,7 +9,7 @@ class SendEstimated extends Component {
   };
 
   componentDidMount() {
-    fetch("http://10.58.5.71:8000/services/quotationList", {
+    fetch(`${QUOTATIONLIST_POST}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -56,7 +58,7 @@ class SendEstimated extends Component {
   }
 }
 
-export default SendEstimated;
+export default withRouter(SendEstimated);
 
 const Estimatebox = styled.div`
   display: flex;

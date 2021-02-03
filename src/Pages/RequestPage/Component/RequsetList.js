@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { SERVER_SERVICE } from "../../../config";
 import styled from "styled-components";
 
@@ -9,7 +9,7 @@ class RequsetList extends Component {
   };
 
   componentDidMount() {
-    fetch(SERVER_SERVICE, {
+    fetch(`${SERVER_SERVICE}?limit=4`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -64,7 +64,7 @@ class RequsetList extends Component {
 export default withRouter(RequsetList);
 
 const RequestListed = styled.div`
-  margin: 30px auto;
+  margin: 0 auto;
   cursor: pointer;
 `;
 

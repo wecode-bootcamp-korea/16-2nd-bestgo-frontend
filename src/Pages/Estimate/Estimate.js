@@ -28,12 +28,10 @@ const Estimated = styled.div`
   width: 1100px;
   height: 100vh;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 50px;
 `;
 
-const EstimateContainer = styled.div`
-  margin-top: 40px;
-`;
+const EstimateContainer = styled.div``;
 
 const Slider = styled.div`
   width: 100%;
