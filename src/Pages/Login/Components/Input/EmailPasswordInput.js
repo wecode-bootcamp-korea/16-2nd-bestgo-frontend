@@ -28,6 +28,8 @@ export const InputStyled = styled.input.attrs((props) => ({
   }
 
   &::placeholder {
+    font-size: 0.95rem;
+    font-weight: 500;
     color: #bab5b3;
   }
 `;
