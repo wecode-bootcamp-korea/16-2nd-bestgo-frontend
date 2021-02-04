@@ -25,3 +25,9 @@ function Routes() {
 }
 
 export default Routes;
+
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+
+
+`;
