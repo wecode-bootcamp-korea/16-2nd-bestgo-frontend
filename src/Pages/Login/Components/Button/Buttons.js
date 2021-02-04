@@ -1,15 +1,17 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as FacebookLogo } from "./icon-login-facebook-btn.svg";
 import { ReactComponent as KakaoLogo } from "./icon-login-kakaotalk-btn.svg";
 
 function Buttons({ emailClick, kakaoClick }) {
+  const history = useHistory();
   return (
     <>
       <ButtonStyled default onClick={emailClick}>
         <span>이메일 로그인</span>
       </ButtonStyled>
-      <ButtonStyled KakaoBtn onClick={kakaoClick}>
+      <ButtonStyled KakaoBtn onClick={() => kakaoClick(history)}>
         <KakaoLogo />
         <span>Kakao로 시작하기</span>
       </ButtonStyled>

@@ -1,12 +1,12 @@
 import axios from "axios";
+import { KAKAO_LOGIN_API } from "../../../../config";
 const { Kakao } = window;
 
 export const KakaoSocialLogin = (history) => {
   Kakao.Auth.login({
     success: (auth) => {
-      console.log(auth);
       axios
-        .post(`/oauth`, {
+        .get(KAKAO_LOGIN_API, {
           headers: {
             "Content-Type": "application/json",
             Authorization: auth.access_token,

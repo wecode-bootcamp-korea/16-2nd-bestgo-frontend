@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import axios from "axios";
 import styled from "styled-components";
 import Card from "./Components/Card/Card";
 import EmailPasswordInput from "./Components/Input/EmailPasswordInput";
 import Buttons from "./Components/Button/Buttons";
 import { KakaoSocialLogin } from "./Components/Social/KakaoSocialLogin";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { SIGNIN_API } from "../../config";
 
 export default function Login() {
   const [inputs, setInputs] = useState({
@@ -15,6 +17,7 @@ export default function Login() {
   const [onBlurHasValue, setOnBlurHasValue] = useState(false);
   const [buttonsEmailHasValue, setButtonsEmailHasValue] = useState(false);
   const [buttonsPwHasValue, setButtonsPwHasValue] = useState(false);
+  const history = useHistory();
 
   const handleUpdateValue = (e) => {
     const { name, value } = e.target;
@@ -46,7 +49,18 @@ export default function Login() {
   };
 
   const onEmailLogin = () => {
-    alert("로그인 완료!");
+    axios
+      .post(SIGNIN_API, {
+        email: inputs.email,
+        password: inputs.password,
+      })
+      .then((res) => {
+        alert("최고에 오신걸 환영합니다.");
+        history.push("/");
+      })
+      .catch((error) => {
+        alert(error);
+      });
   };
 
   const { email, password } = inputs;

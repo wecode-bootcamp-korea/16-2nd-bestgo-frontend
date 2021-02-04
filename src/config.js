@@ -1,4 +1,6 @@
 export const SERVER = "http://54.175.222.189:8000";
+// export const SERVER = "http://10.58.4.216:8000";
+// export const SERVER = "http://54.175.222.189:8000";
 // export const PRODUCTLIST = `${SERVER}/product/category/1`;
 // export const PRODUCTDETAIL_API = `${SERVER}/product`;
 export const SIGNUP_API = `${SERVER}/users/signup`;
@@ -13,3 +15,5 @@ export const SERVER = "http://10.58.5.71:8000";
 export const SERVER_SERVICE = `${SERVER}/services/receivedRequest`;
 export const SERVER_DETAIL = `${SERVER}/services/requestDetail?requestId`;
 export const SERVER_POST = `${SERVER}/services/createQuotation?requestId`;
+export const SIGNIN_API = `${SERVER}/users/signin`;
+export const KAKAO_LOGIN_API = `${SERVER}/users/kakao_signin`;
