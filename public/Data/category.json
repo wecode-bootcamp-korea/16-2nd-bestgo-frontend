@@ -1,0 +1,24 @@
+{
+  "Category": [
+      {
+          "iconImageUrl": "/Images/html.png",
+          "name": "Frontend",
+          "categoryId": 1
+      },
+      {
+          "iconImageUrl": "/Images/css.png",
+          "name": "Backend",
+          "categoryId": 2
+      },
+      {
+          "iconImageUrl": "/Images/html.png",
+          "name": "Embedded",
+          "categoryId": 3
+      },
+      {
+          "iconImageUrl": "/Images/html.png",
+          "name": "git",
+          "categoryId": 4
+      }
+  ]
+}
