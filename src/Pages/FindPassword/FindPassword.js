@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-import { Nav, Title, Main, FormTitle, InvalidInfo } from "../Login/Login";
+import { Title, Main, FormTitle, InvalidInfo } from "../Login/Login";
 import { CardLayout } from "../Login/Components/Card/Card";
 import { InputStyled } from "../Login/Components/Input/EmailPasswordInput";
 import { ButtonStyled } from "../Login/Components/Button/Buttons";
@@ -45,7 +45,6 @@ function FindPassword({ history }) {
 
   return (
     <>
-      <Nav />
       <Main>
         <Title>비밀번호 찾기</Title>
         <FindCardLayout>

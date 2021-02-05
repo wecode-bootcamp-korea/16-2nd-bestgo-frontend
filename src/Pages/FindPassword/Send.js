@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
-import { Nav, Title, Main } from "../Login/Login";
+import { Title, Main } from "../Login/Login";
 import { FindCardLayout, FindNotice } from "./FindPassword";
 import { ReactComponent as MailSVG } from "./mail.svg";
 
@@ -9,7 +9,6 @@ function Send() {
   const emailValue = useLocation().state.inputFindEmail;
   return (
     <>
-      <Nav />
       <Main>
         <Title>비밀번호 찾기</Title>
         <SendCardLayout>

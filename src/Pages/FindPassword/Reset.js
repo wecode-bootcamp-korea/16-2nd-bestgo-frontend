@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { Nav, Title, Main } from "../Login/Login";
+import { Title, Main } from "../Login/Login";
 import { FindCardLayout } from "./FindPassword";
 import { FormTitle, InvalidInfo, FormGroup } from "../Login/Login";
 import { InputStyled } from "../Login/Components/Input/EmailPasswordInput";
@@ -79,7 +79,6 @@ function Reset(props) {
 
   return (
     <>
-      <Nav />
       <Main>
         <Title>비밀번호 재설정</Title>
         <ResetCardLayout>
