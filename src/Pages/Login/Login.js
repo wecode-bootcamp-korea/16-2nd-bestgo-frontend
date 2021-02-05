@@ -56,7 +56,8 @@ export default function Login() {
       })
       .then((res) => {
         alert("최고에 오신걸 환영합니다.");
-        history.push("/");
+        localStorage.setItem("token", res.data.TOKEN);
+        window.location.replace("/");
       })
       .catch((error) => {
         alert(error);
@@ -71,9 +72,6 @@ export default function Login() {
 
   return (
     <>
-      <Nav>
-        <H1>LOGO</H1>
-      </Nav>
       <Main>
         <Title>로그인</Title>
         <Card>
@@ -124,19 +122,6 @@ export default function Login() {
     </>
   );
 }
-
-//logo 만들면 지우기!
-export const Nav = styled.nav`
-  background-color: #000;
-  text-align: center;
-  height: 72px;
-`;
-
-export const H1 = styled.h1`
-  color: #fff;
-  font-size: 24px;
-  font-weight: 600;
-`;
 
 export const Main = styled.main`
   background-color: #fafafa;

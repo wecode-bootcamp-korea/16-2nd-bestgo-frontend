@@ -1,20 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import EmailPasswordInput from "../Login/Components/Input/EmailPasswordInput";
 import { Link, useHistory } from "react-router-dom";
-import {
-  Nav,
-  H1,
-  Main,
-  Title,
-  FormGroup,
-  FormTitle,
-  InvalidInfo,
-} from "../Login/Login";
+import { Main, Title, FormGroup, FormTitle, InvalidInfo } from "../Login/Login";
 import { ReactComponent as FacebookLogo } from "../Login/Components/Button/icon-login-facebook-btn.svg";
 import { ButtonStyled } from "../../Pages/Login/Components/Button/Buttons";
 import { CardLayout } from "../Login/Components/Card/Card";
-import EmailPasswordInput from "../Login/Components/Input/EmailPasswordInput";
 import { SIGNUP_MSG } from "./data/VelidationMsg";
 import { SIGNUP_API } from "../../config";
 
@@ -83,7 +75,7 @@ export default function Signup() {
         password: inputSignupValue.password,
       })
       .then((res) => {
-        alert("최고에 오신걸 환영합니다!");
+        alert("회원가입이 완료되었습니다 !");
         history.push("/login");
       })
       .catch((err) => {
@@ -95,9 +87,6 @@ export default function Signup() {
 
   return (
     <>
-      <Nav>
-        <H1>Logo</H1>
-      </Nav>
       <Main>
         <Title>최고에 오신 것을 환영합니다</Title>
         <SignupCard>
