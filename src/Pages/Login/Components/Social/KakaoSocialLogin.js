@@ -13,8 +13,8 @@ export const KakaoSocialLogin = (history) => {
           },
         })
         .then((res) => {
-          localStorage.setItem("kakao_token", res.token);
-          alert("최고에 오신걸 환영합니다.");
+          localStorage.setItem("token", res.token);
+          alert("최고에 오신걸 환영합니다!");
           history.push("/");
         });
     },
