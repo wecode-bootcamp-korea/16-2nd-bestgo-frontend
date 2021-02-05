@@ -7,7 +7,10 @@ import Send from "./Pages/FindPassword/Send";
 import Reset from "./Pages/FindPassword/Reset";
 import Signup from "./Pages/Signup/Signup";
 import Main from "./Pages/Main/Main";
+import Best from "./Pages/Best/Best";
 import RequestPage from "./Pages/RequestPage/RequestPage";
+import BestRegions from "./Pages/Best/Components/BestRegions";
+import Footer from "./Components/Footer/Footer";
 import RequestDetail from "./Pages/RequestDetail/RequestDetail";
 import Search from "./Pages/Search/Search";
 import SearchDetail from "./Pages/SearchDetail/SearchDetail";
@@ -17,6 +20,7 @@ import MainNavbarLayout from "./Components/Navbar/MainNavbarLayout";
 import Navbar from "./Components/Navbar/Navbar";
 import CustomerNavbar from "./Components/Navbar/CustomerNavbar";
 import ExpertNavbar from "./Components/Navbar/ExpertNavbar";
+import BestSignup from "./Pages/Best/Components/BestSignup";
 
 function Routes(props) {
   const token = window.localStorage.getItem("token") && true;
@@ -40,6 +44,10 @@ function Routes(props) {
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/requestpage" component={RequestPage} />
+        <Route exact path="/services/regions" component={BestRegions} />
+        <Route exact path="/best-signup" component={BestSignup} />
+        <Route exact path="/best" component={Best} />
+        <Route exact path="/footer" component={Footer} />
         <Route exact path="/requestpage/detail" component={RequestDetail} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/estimate" component={Estimate} />

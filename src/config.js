@@ -10,6 +10,8 @@ export const SIGNUP_API = `${SERVER}/users/signup`;
 export const SIGNIN_API = `${SERVER}/users/signin`;
 export const KAKAO_LOGIN_API = `${SERVER}/users/kakao_signin`;
 export const FIND_SEND = `${SERVER}/users/password_reset`;
+export const BEST_SIGNUP = `${SERVER_LOCAL}/services/categories`;
+export const BEST_SIGNUP_TEMP_MASTER = `${SERVER_LOCAL}/users/temp_master`;
 
 //호익님 주소
 export const SERVER_JW = "http://10.58.5.71:8000";
