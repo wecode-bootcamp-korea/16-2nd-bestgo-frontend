@@ -31,6 +31,7 @@ const Footers = styled.footer`
   height: 350px;
   margin-top: 30px;
   border-top: 1px solid #f2f2f2;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 const FooterContainer = styled.div`

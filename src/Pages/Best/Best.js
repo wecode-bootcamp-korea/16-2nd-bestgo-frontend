@@ -1,34 +1,40 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import queryString from "query-string";
 import Frame from "./Components/Frame/Frame";
+import { useHistory, useLocation } from "react-router-dom";
 import { BEST_SIGNUP } from "../../config";
 import { Button } from "../Login/Components/Button/Buttons";
 
 function Best(props) {
   const [bestSigndata, setBestSignData] = useState("");
   const [checkedStatus, setCheckedStatus] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [checkedValue, setCheckedValue] = useState(true);
   const [nextValue, setNextValue] = useState(1);
+
   const history = useHistory();
+  const location = useLocation();
+  const query = queryString.parse(location.search);
 
   useEffect(() => {
     axios
       .get(BEST_SIGNUP)
       .then((res) => {
-        console.log(res);
         setBestSignData(res.data);
       })
       .catch((err) => {
         alert(err);
       });
+    return () => setLoading(loading);
   }, []);
 
   const nextAxiosData = (number) => {
     axios
       .get(BEST_SIGNUP + `?category=[${checkedStatus}]`)
       .then((res) => {
+        console.log(res);
         setBestSignData(res.data);
       })
       .catch((err) => {
@@ -38,27 +44,30 @@ function Best(props) {
     if (number === 2) history.push("/services/regions");
   };
 
-  const handleCheckedStatus = (e) => {
+  const handleCheckedStatus = (e, idx) => {
     const { checked, value } = e.target;
     setCheckedStatus([...checkedStatus, value]);
-    setCheckedValue(checked);
+
+    if (Number(value) === idx) {
+      setCheckedValue(checkedValue);
+    }
   };
 
   return (
     <>
       <StepInfo>{bestSigndata.question}</StepInfo>
       <StepSubInfo>{bestSigndata.sub_question}</StepSubInfo>
-      {bestSigndata.Category &&
-        bestSigndata.Category.map((list, idx) => {
+      {bestSigndata.services &&
+        bestSigndata.services.map((list, idx) => {
           return (
             <Frame key={idx}>
               <ListGroupItem>
                 <Checkbox
                   id={idx}
                   type="checkbox"
-                  value={bestSigndata.Category[idx].id}
-                  onChange={(e) => handleCheckedStatus(e)}
-                  defaultchecked={!checkedValue}
+                  checked={!checkedValue}
+                  value={bestSigndata.services[idx].id}
+                  onChange={(e) => handleCheckedStatus(e, idx)}
                 />
                 <List>{list.name}</List>
               </ListGroupItem>

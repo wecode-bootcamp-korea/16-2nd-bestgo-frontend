@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import DaumPostcode from "react-daum-postcode";
 import styled from "styled-components";
 import { BestFrame } from "./Frame/Frame";
 import { NextButton } from "../Best";
+import { CardLayout } from "../../Login/Components/Card/Card";
 
 function BestRegions({ props }) {
   const handleComplete = (data) => {
@@ -29,12 +30,14 @@ function BestRegions({ props }) {
   };
 
   return (
-    <DaumFrameStyle>
-      <DaumPostcodeStyle onComplete={handleComplete} {...props} />
-      <NextButtonStyle default onClick={handleNext}>
-        <span>다음</span>
-      </NextButtonStyle>
-    </DaumFrameStyle>
+    <RegionsLayout>
+      <DaumFrameStyle>
+        <DaumPostcodeStyle onComplete={handleComplete} {...props} autoClose />
+        <NextButtonStyle default onClick={handleNext}>
+          <span>다음</span>
+        </NextButtonStyle>
+      </DaumFrameStyle>
+    </RegionsLayout>
   );
 }
 
@@ -42,10 +45,12 @@ export default BestRegions;
 
 export const DaumPostcodeStyle = styled(DaumPostcode)`
   display: block;
-  width: 600px;
+  width: 700px;
   height: 500px;
   padding: 1rem;
-  margin: 1rem;
+  position: relative;
+  bottom: 5%;
+  right: 20%;
 `;
 
 export const DaumFrameStyle = styled(BestFrame)`
@@ -53,5 +58,11 @@ export const DaumFrameStyle = styled(BestFrame)`
 `;
 
 export const NextButtonStyle = styled(NextButton)`
-  left: 42%;
+  left: 15%;
+  margin-top: 10%;
+`;
+
+export const RegionsLayout = styled(CardLayout)`
+  border: 0;
+  padding: 0;
 `;
