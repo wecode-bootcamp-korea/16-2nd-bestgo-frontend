@@ -30,7 +30,7 @@ function BestSignup() {
         alert("최고 가입을 완료하였습니다!");
         console.log(res);
         localStorage.setItem("master_token", res.data.master_token);
-        history.push("/");
+        window.location.replace("/");
       })
       .catch((err) => {
         alert(err);

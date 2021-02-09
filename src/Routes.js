@@ -28,7 +28,7 @@ function Routes(props) {
   return (
     <Router>
       <MainNavbarLayout>
-        {!token && <Navbar />}
+        {!token && !master_token && <Navbar />}
         {token && <CustomerNavbar />}
         {master_token && <ExpertNavbar />}
       </MainNavbarLayout>
@@ -54,6 +54,7 @@ function Routes(props) {
         <Route exact path="/search/detail" component={SearchDetail} />
         <Route exact path="/request/:serviceId" component={Request} />
       </Switch>
+      <Footer />
     </Router>
   );
 }

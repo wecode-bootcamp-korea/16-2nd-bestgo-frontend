@@ -165,6 +165,6 @@ export const LinkStyled = styled(Link)`
     color: #737373;
     text-align: center;
     font-weight: 500;
-    margin-top: 2rem;
+    margin-top: 0.7rem;
   }
 `;
