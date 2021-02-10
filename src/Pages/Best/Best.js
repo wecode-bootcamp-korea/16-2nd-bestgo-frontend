@@ -1,73 +1,72 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import queryString from "query-string";
 import Frame from "./Components/Frame/Frame";
-import { useHistory, useLocation } from "react-router-dom";
-import { BEST_SIGNUP } from "../../config";
+import { useHistory, useLocation, useParams } from "react-router-dom";
+import { BEST_SIGNUP, BEST_SIGNUP_QUESTION } from "../../config";
 import { Button } from "../Login/Components/Button/Buttons";
 
 function Best(props) {
-  const [bestSigndata, setBestSignData] = useState("");
-  const [checkedStatus, setCheckedStatus] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [checkedValue, setCheckedValue] = useState(true);
+  const [bestQuestionData, setBestQuestionData] = useState("");
+  const [bestSignData, setBestSignData] = useState("");
+  const [checkedValue, setCheckedValue] = useState([]);
   const [nextValue, setNextValue] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   const history = useHistory();
-  const location = useLocation();
-  const query = queryString.parse(location.search);
+
+  const getBestQuestion = () => {
+    return axios.get(`${BEST_SIGNUP_QUESTION}/${nextValue}`);
+  };
+
+  const getBestSignup = () => {
+    return axios.get(BEST_SIGNUP);
+  };
+
+  const nextAxiosData = (e, value) => {
+    checkboxOnChange(e);
+    setNextValue(Number(value++));
+    history.push({
+      pathname: "/best/category",
+      state: { checkedValue, value },
+    });
+  };
+
+  const checkboxOnChange = (e) => {
+    const { value } = e.target;
+    setCheckedValue([...checkedValue, Number(value)]);
+  };
 
   useEffect(() => {
     axios
-      .get(BEST_SIGNUP)
-      .then((res) => {
-        setBestSignData(res.data);
-      })
+      .all([getBestSignup(), getBestQuestion()])
+      .then(
+        axios.spread((bestResp, bestQuestionResp) => {
+          setBestSignData(bestResp.data);
+          setBestQuestionData(bestQuestionResp.data);
+        }),
+      )
       .catch((err) => {
         alert(err);
       });
     return () => setLoading(loading);
   }, []);
 
-  const nextAxiosData = (number) => {
-    axios
-      .get(BEST_SIGNUP + `?category=[${checkedStatus}]`)
-      .then((res) => {
-        console.log(res);
-        setBestSignData(res.data);
-      })
-      .catch((err) => {
-        alert(err);
-      });
-    setNextValue((prev) => prev + 1);
-    if (number === 2) history.push("/services/regions");
-  };
-
-  const handleCheckedStatus = (e, idx) => {
-    const { checked, value } = e.target;
-    setCheckedStatus([...checkedStatus, value]);
-
-    if (Number(value) === idx) {
-      setCheckedValue(checkedValue);
-    }
-  };
-
   return (
     <>
-      <StepInfo>{bestSigndata.question}</StepInfo>
-      <StepSubInfo>{bestSigndata.sub_question}</StepSubInfo>
-      {bestSigndata.services &&
-        bestSigndata.services.map((list, idx) => {
+      <StepInfo>{bestQuestionData.question}</StepInfo>
+      <StepSubInfo>{bestQuestionData.sub_question}</StepSubInfo>
+      {bestSignData.services &&
+        bestSignData.services.map((list, idx) => {
           return (
             <Frame key={idx}>
               <ListGroupItem>
                 <Checkbox
                   id={idx}
+                  name={idx}
                   type="checkbox"
-                  checked={!checkedValue}
-                  value={bestSigndata.services[idx].id}
-                  onChange={(e) => handleCheckedStatus(e, idx)}
+                  value={bestSignData.services[idx].id}
+                  onChange={(e) => checkboxOnChange(e)}
                 />
                 <List>{list.name}</List>
               </ListGroupItem>
@@ -75,7 +74,7 @@ function Best(props) {
           );
         })}
 
-      <NextButton default onClick={() => nextAxiosData(nextValue)}>
+      <NextButton default onClick={(e) => nextAxiosData(e, nextValue)}>
         <span>다음</span>
       </NextButton>
       <PrevButton>

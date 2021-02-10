@@ -11,6 +11,7 @@ export const SIGNIN_API = `${SERVER}/users/signin`;
 export const KAKAO_LOGIN_API = `${SERVER}/users/kakao_signin`;
 export const FIND_SEND = `${SERVER}/users/password_reset`;
 export const BEST_SIGNUP = `${SERVER}/users/category`;
+export const BEST_SIGNUP_QUESTION = `${SERVER}/users/question`;
 export const BEST_SIGNUP_TEMP_MASTER = `${SERVER}/users/temp_master`;
 
 //호익님 주소

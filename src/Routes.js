@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Login from "./Pages/Login/Login";
@@ -21,6 +21,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import CustomerNavbar from "./Components/Navbar/CustomerNavbar";
 import ExpertNavbar from "./Components/Navbar/ExpertNavbar";
 import BestSignup from "./Pages/Best/Components/BestSignup";
+import BestCategory from "./Pages/Best/Components/BestCategory";
 
 function Routes(props) {
   const token = window.localStorage.getItem("token") && true;
@@ -46,6 +47,7 @@ function Routes(props) {
         <Route exact path="/requestpage" component={RequestPage} />
         <Route exact path="/services/regions" component={BestRegions} />
         <Route exact path="/best-signup" component={BestSignup} />
+        <Route exact path="/best/category" component={BestCategory} />
         <Route exact path="/best" component={Best} />
         <Route exact path="/footer" component={Footer} />
         <Route exact path="/requestpage/detail" component={RequestDetail} />

@@ -21,14 +21,11 @@ function BestSignup() {
     });
   };
 
-  const history = useHistory();
-
   const handleBestSignup = () => {
     axios
       .get(BEST_SIGNUP_TEMP_MASTER)
       .then((res) => {
         alert("최고 가입을 완료하였습니다!");
-        console.log(res);
         localStorage.setItem("master_token", res.data.master_token);
         window.location.replace("/");
       })
