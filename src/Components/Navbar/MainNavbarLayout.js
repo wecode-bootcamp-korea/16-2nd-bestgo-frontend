@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import BestLogo from "../../images/BestgoLogo.png";
 
 function MainNavbarLayout({ children }) {
   return (
     <NavbarLayout>
       <MainNavbarGroup>
-        <BestgoLogo src={BestLogo} alt="BESTGO--LOGO" />
+        <Link to="/">
+          <BestgoLogo src={BestLogo} alt="BESTGO--LOGO" />
+        </Link>
         {children}
       </MainNavbarGroup>
     </NavbarLayout>
