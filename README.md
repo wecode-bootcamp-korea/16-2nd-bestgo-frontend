@@ -7,7 +7,7 @@
 
 ###  BestGo 팀원 소개
 - FrontEnd Developer : 유호익(PM), 김기열, 박영호
-- BackEnd Developer : 김지원, 정준영
+- BackEnd Developer : 정지원, 장준영
 
 ### 프로젝트 기간
 2021.01.25 ~ 2021.02.05
