@@ -1,5 +1,5 @@
 ## BestGo Team Project
-(https://project-bestgo.s3.ap-northeast-2.amazonaws.com/logo_image/bestgo.png)
+![bestgo](https://project-bestgo.s3.ap-northeast-2.amazonaws.com/logo_image/bestgo.png)
 
 ### 프로젝트 소개
 유저와 고수를 매칭시키는 생활서비스 웹애플리케이션 [숨고](https://soomgo.com/) 클론 프로젝트를 진행하였습니다.
