@@ -1,8 +1,12 @@
 import React, { Component } from "react";
-import { SERVICE_LIST_API, CATEGORY_API } from "../../config";
+import {
+  SERVICE_LIST_API,
+  CATEGORY_API,
+  SERVICE_SEARCH_API,
+} from "../../config";
 import { withRouter } from "react-router-dom";
 
-import Modal from "./Modal/Modal";
+import SearchingModal from "./Modal/SearchingModal";
 import Category from "./Category";
 import Service from "./Service";
 
@@ -13,6 +17,8 @@ class Main extends Component {
     category: [],
     serviceList: [],
     categoryName: [],
+    modal: false,
+    searchContent: [],
   };
 
   componentDidMount() {
@@ -31,7 +37,7 @@ class Main extends Component {
   };
 
   getFirstServiceList = () => {
-    fetch(`${SERVICE_LIST_API}?catCd=1`)
+    fetch(`${SERVICE_LIST_API}?catCd=17`)
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -56,9 +62,39 @@ class Main extends Component {
     this.props.history.push(`/request/${serviceId}`);
   };
 
+  handleOpenModal = () => {
+    this.setState({
+      modal: true,
+    });
+  };
+
+  handleCloseModal = () => {
+    this.setState({
+      modal: false,
+    });
+  };
+
+  handleSearch = (e) => {
+    this.setState({
+      searchContent: e.target.value,
+    });
+  };
+
   render() {
-    const { category, serviceList, categoryName } = this.state;
-    const { getServiceList, goToRequest } = this;
+    const {
+      category,
+      serviceList,
+      categoryName,
+      modal,
+      searchContent,
+    } = this.state;
+    const {
+      getServiceList,
+      goToRequest,
+      handleOpenModal,
+      handleCloseModal,
+      handleSearch,
+    } = this;
 
     return (
       <main className="Main">
@@ -70,13 +106,21 @@ class Main extends Component {
               type="text"
               placeholder="어떤 분야의 전문가를 찾으시나요?"
               className="search"
+              onChange={handleSearch}
             />
-            <button type="button">고수찾기</button>
+            <button type="button" onClick={handleOpenModal}>
+              고수찾기
+            </button>
           </div>
         </header>
         <Category category={category} getServiceList={getServiceList} />
         <Service serviceList={serviceList} goToRequest={goToRequest} />
-        <Modal />
+        {modal && (
+          <SearchingModal
+            onClose={handleCloseModal}
+            searchContent={searchContent}
+          />
+        )}
       </main>
     );
   }

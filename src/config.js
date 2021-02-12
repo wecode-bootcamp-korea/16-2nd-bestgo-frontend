@@ -15,7 +15,7 @@ export const BEST_SIGNUP_QUESTION = `${SERVER}/users/question`;
 export const BEST_SIGNUP_TEMP_MASTER = `${SERVER}/users/temp_master`;
 
 //호익님 주소
-export const SERVER_JW = "http://10.58.5.71:8000";
+export const SERVER_JW = "http://54.175.222.189:8000";
 export const CATEGORY_API = `${SERVER_JW}/services/categories`;
 export const SERVICE_LIST_API = `${SERVER_JW}/services/services`;
 export const REGION_LIST_API = `${SERVER_JW}/services/regions`;
@@ -26,3 +26,4 @@ export const SERVICE_QUESTIONS_API = `${SERVER_JW}/services/questions`;
 export const SERVICE_REGIONS_API = `${SERVER_JW}/services/regions`;
 export const SERVICE_SUBMIT_API = `${SERVER_JW}/services/requests?`;
 export const MACHING_API = `${SERVER_JW}/services/matchMasters?`;
+export const SERVICE_SEARCH_API = `${SERVER_JW}/services/search?`;
