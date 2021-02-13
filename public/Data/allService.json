@@ -1,0 +1,89 @@
+{
+  "ServiceList": [
+      {
+          
+          "name": "HTML",
+          "serviceId": 257
+      },
+      {
+          
+          "name": "CSS",
+          "serviceId": 258
+      },
+      {
+          
+          "name": "JS",
+          "serviceId": 259
+      },
+      {
+          
+        "name": "REACT",
+        "serviceId": 260
+    },
+      {
+          
+          "name": "UI/UX",
+          "serviceId": 261
+      },
+      {
+        
+        "name": "WEB DESIGN",
+        "serviceId": 262
+    },
+    {
+        
+        "name": "ANGULER",
+        "serviceId": 263
+    },
+    {
+        
+        "name": "VUE",
+        "serviceId": 264
+    },
+    {
+        
+        "name": "TS",
+        "serviceId": 265
+    } ,
+    {
+      
+      "name": "PYTHON",
+      "serviceId": 266
+  },
+  {
+      
+      "name": "JAVA",
+      "serviceId": 267
+  },
+  {
+      
+      "name": "RUBY",
+      "serviceId": 268
+  },
+  {
+      
+      "name": "DJANGO",
+      "serviceId": 269
+  },{
+      
+    "name": "SPRING",
+    "serviceId": 270
+},{
+      
+  "name": "MYSQL",
+  "serviceId": 271
+},{
+      
+  "name": "MONGO DB",
+  "serviceId": 272
+},{
+      
+  "name": "NODE JS",
+  "serviceId": 273
+},{
+      
+  "name": "RUBY ON RAILS",
+  "serviceId": 274
+}
+  ]
+}

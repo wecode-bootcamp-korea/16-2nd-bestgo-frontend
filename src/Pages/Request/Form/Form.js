@@ -51,7 +51,6 @@ class Form extends Component {
       );
 
     alert("요청서가 전달되었습니다!");
-    this.props.history.push("/category");
   };
 
   Matchting = () => {
@@ -64,15 +63,16 @@ class Form extends Component {
         },
       },
     ).then((response) => console.log(response));
+    this.props.history.push("/");
   };
 
   handleRadio = (e) => {
-    const { checkedContents } = this.state;
+    const { checkedContents, step } = this.state;
     this.setState({
       checkedContents: [
-        ...checkedContents.slice(0, this.state.step),
+        ...checkedContents.slice(0, step),
         e.target.value,
-        ...checkedContents.slice(this.state.step + 1),
+        ...checkedContents.slice(step + 1),
       ],
     });
   };
@@ -82,7 +82,6 @@ class Form extends Component {
   };
 
   handleSubIdx = (e) => {
-    console.log("?????");
     this.setState({ subIdx: e.target.value });
   };
 

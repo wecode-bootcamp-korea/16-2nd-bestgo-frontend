@@ -15,7 +15,7 @@ export const KakaoSocialLogin = (history) => {
         .then((res) => {
           localStorage.setItem("token", res.token);
           alert("최고에 오신걸 환영합니다!");
-          history.push("/");
+          window.location.replace("/");
         });
     },
     fail: (err) => {

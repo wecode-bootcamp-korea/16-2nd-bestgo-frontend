@@ -1,0 +1,66 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.SearchingModal {
+  animation: fadein 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  .search {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 450px;
+    height: 100%;
+    overflow: scroll;
+    background: white;
+
+    .closeBox {
+      position: absolute;
+      right: 20px;
+
+      .close {
+        padding: 10px;
+        font-size: 20px;
+      }
+    }
+
+    h2 {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .serviceBtnArea {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 80%;
+
+      button {
+        margin: 7px;
+        padding: 7px;
+        background-color: #7ea2b9;
+        border-radius: 5px;
+        font-size: 17px;
+        color: white;
+      }
+    }
+  }
+}

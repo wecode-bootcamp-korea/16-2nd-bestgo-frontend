@@ -55,6 +55,9 @@ function Routes(props) {
         <Route exact path="/estimate" component={Estimate} />
         <Route exact path="/search/detail" component={SearchDetail} />
         <Route exact path="/request/:serviceId" component={Request} />
+        <Route exact path="/services/regions" component={BestRegions} />
+        <Route exact path="/best-signup" component={BestSignup} />
+        <Route exact path="/best" component={Best} />
       </Switch>
       <Footer />
     </Router>
