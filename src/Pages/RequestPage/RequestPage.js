@@ -11,7 +11,6 @@ class RequestPage extends Component {
           <Htag>받은요청</Htag>
           <RequsetList />
         </RequestPaged>
-        <Footer />
       </>
     );
   }
@@ -22,7 +21,7 @@ export default RequestPage;
 const RequestPaged = styled.div`
   width: 1100px;
   height: 100vh;
-  margin: 80px auto;
+  margin: 30px auto;
 `;
 
 const Htag = styled.div`

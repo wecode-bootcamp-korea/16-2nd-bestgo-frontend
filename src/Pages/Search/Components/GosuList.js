@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
-import { withRouter, Link } from "react-router-dom";
-import { SERVER } from "../../../config";
+import { withRouter } from "react-router-dom";
+import { USER_PROFILE } from "../../../config";
 import PageBtn from "../Components/PageBtn";
 import styled from "styled-components";
 
@@ -13,7 +13,7 @@ class GosuList extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://10.58.0.86:8000/users/profile?limit=${LIMIT}`)
+    fetch(`${USER_PROFILE}?limit=${LIMIT}`)
       .then((res) => res.json())
       .then((result) => this.setState({ data: result.masterList }));
   }
@@ -21,11 +21,7 @@ class GosuList extends Component {
   fetchPage = (e) => {
     const offset = e?.target.dataset.idx;
 
-    fetch(
-      `http://10.58.0.86:8000/users/profile?limit=${LIMIT}&offset=${
-        offset * LIMIT
-      }`,
-    )
+    fetch(`${USER_PROFILE}?limit=${LIMIT}&offset=${offset * LIMIT}`)
       .then((res) => res.json())
       .then((result) => this.setState({ data: result.masterList }));
   };
@@ -36,7 +32,7 @@ class GosuList extends Component {
 
   filterHandle = (e) => {
     const filter = e?.target.value;
-    fetch(`${SERVER}/users/profile?sorted_by=${filter}`)
+    fetch(`${USER_PROFILE}?sorted_by=${filter}`)
       .then((res) => res.json())
       .then((result) => this.setState({ data: result.masterList }));
   };

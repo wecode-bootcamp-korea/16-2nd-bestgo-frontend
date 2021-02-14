@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { SERVER_DETAIL } from "../../../config";
 import styled from "styled-components";
+import { SERVER_DETAIL } from "../../../config";
 
 class UserList extends Component {
   state = {
@@ -10,14 +10,18 @@ class UserList extends Component {
 
   componentDidMount() {
     const id = this.props.location.state.id;
-    fetch(`${SERVER_DETAIL}=${id}`)
+    fetch(`${SERVER_DETAIL}=${id}`, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((result) => this.setState({ userlist: result.requestDetail }));
   }
 
   render() {
     const { userlist } = this.state;
-
+    console.log(userlist[0]?.requester);
     return (
       <UserLists>
         <UserListContainer>

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { GOSU_INFORMATION } from "../Data/Data";
+import { USER_PROFILE } from "../../../config";
+import { withRouter } from "react-router-dom";
 
 class GosuInfo extends Component {
   state = {
@@ -8,7 +10,7 @@ class GosuInfo extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://10.58.0.86:8000/users/profile/${this.props.match.params.id}`)
+    fetch(`${USER_PROFILE}/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((result) => this.setState({ gosuinfo: result.profile[0] }));
   }
@@ -62,7 +64,7 @@ class GosuInfo extends Component {
   }
 }
 
-export default GosuInfo;
+export default withRouter(GosuInfo);
 
 const GosuInfos = styled.div`
   img {
@@ -151,7 +153,7 @@ const DescriptionContainer = styled.div`
 const FixedBox = styled.div`
   position: fixed;
   left: 60%;
-  top: 5%;
+  top: 10%;
   width: 260px;
   height: 185px;
   padding: 20px;
