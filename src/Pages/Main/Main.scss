@@ -13,15 +13,18 @@
     h1 {
       text-align: center;
       font-weight: 500;
-      font-size: 2.5em;
-      color: black;
+      font-size: 2.5rem;
+      color: #fff;
+      font-family: "Noto Sans KR", sans-serif;
     }
 
     p {
       margin: 20px 0px;
       text-align: center;
-      font-size: 1em;
-      color: black;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      font-family: "Noto Sans KR", sans-serif;
     }
 
     .searchBar {
@@ -39,14 +42,24 @@
         color: #737373;
         border: 1px solid #e1e1e1;
         background-color: #fff;
+
+        &::placeholder {
+          color: #737373;
+          font-size: 0.875rem;
+          font-weight: 400;
+          opacity: 0.5;
+          padding-left: 3%;
+          font-family: "Noto Sans KR", sans-serif;
+        }
       }
 
       button {
         width: 20%;
         color: #fff;
         background-color: #00c7ae;
-        font-size: 1em;
+        font-size: 1rem;
         font-weight: 500;
+        font-family: "Noto Sans KR", sans-serif;
       }
     }
   }
