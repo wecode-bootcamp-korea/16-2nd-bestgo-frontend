@@ -7,6 +7,8 @@ import { NextButton } from "../Best";
 import { CardLayout } from "../../Login/Components/Card/Card";
 
 function BestRegions({ props }) {
+  const [, setIsAddress] = useState("");
+
   const handleComplete = (data) => {
     let fullAddress = data.address;
     let extraAddress = "";
@@ -21,6 +23,7 @@ function BestRegions({ props }) {
       }
       fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
     }
+    setIsAddress(fullAddress);
   };
 
   const history = useHistory();

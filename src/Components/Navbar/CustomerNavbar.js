@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { customerLinks } from "./NavbarMenu/NavbarMenu";
+import { customerLinks, dropdownItems } from "./NavbarMenu/NavbarMenu";
 import { Ul, Content, LinkStyled } from "./Navbar";
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownDivider,
+} from "styled-dropdown-component";
+
 import MagnifyingGlassSrc from "../../images/MagnifyingGlass.svg";
 import BellSrc from "../../images/bell.svg";
 import ProfileSrc from "../../images/profile.svg";
 
 function CustomerNavbar() {
+  const [hidden, setHidden] = useState(true);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.replace("/");
+  };
+
+  const expertChange = () => {
+    const token = window.localStorage.getItem("token");
+    localStorage.removeItem("token");
+    localStorage.setItem("master_token", token);
+    window.location.replace("/");
+  };
+
   return (
     <>
       <CustomerMenu>
@@ -23,7 +44,26 @@ function CustomerNavbar() {
       <CustomerProfile>
         <Bell src={BellSrc} alt="Bell__IMG" />
         <Profile src={ProfileSrc} alt="Profile__IMG" />
-        <CustomerName>최고 고객님</CustomerName>
+        <Dropdown>
+          <CustomerName onClick={() => setHidden(!hidden)}>
+            최고 고객님
+          </CustomerName>
+          <CustomerDropdownMenu
+            hidden={hidden}
+            toggle={() => setHidden(!hidden)}
+          >
+            {dropdownItems.map((link, idx) => {
+              return (
+                <LinkStyled to={link.to} key={idx}>
+                  <DropdownItem>{link.name}</DropdownItem>
+                </LinkStyled>
+              );
+            })}
+            <DropdownDivider />
+            <DropdownItem onClick={expertChange}>고수전환</DropdownItem>
+            <DropdownItem onClick={handleLogout}>로그아웃</DropdownItem>
+          </CustomerDropdownMenu>
+        </Dropdown>
       </CustomerProfile>
     </>
   );
@@ -80,4 +120,13 @@ export const CustomerName = styled.p`
   font-size: 1rem;
   margin: 1.5rem;
   color: #323232;
+  cursor: pointer;
+`;
+
+export const CustomerDropdownMenu = styled(DropdownMenu)`
+  margin: 0 0 0 -1.5rem;
+
+  ${DropdownItem} {
+    cursor: pointer;
+  }
 `;

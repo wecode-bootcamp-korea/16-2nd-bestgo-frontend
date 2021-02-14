@@ -46,3 +46,40 @@ export const expertLinks = [
     name: "프로필",
   },
 ];
+
+export const dropdownItems = [
+  {
+    to: "/estimate",
+    name: "받은견적",
+  },
+  {
+    to: "/",
+    name: "마이페이지",
+  },
+  {
+    to: "/Best",
+    name: "고수가입",
+  },
+];
+
+export const bestSignDropdownItems = [
+  {
+    to: "/estimate",
+    name: "받은견적",
+  },
+  {
+    to: "/",
+    name: "마이페이지",
+  },
+];
+
+export const bestDropdownItems = [
+  {
+    to: "/",
+    name: "프로필 관리",
+  },
+  {
+    to: "/",
+    name: "마이페이지",
+  },
+];

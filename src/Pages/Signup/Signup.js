@@ -91,7 +91,7 @@ export default function Signup() {
         <Title>최고에 오신 것을 환영합니다</Title>
         <SignupCard>
           <FormGroup>
-            <FormTitle>생년월일</FormTitle>
+            <FormTitle>이름</FormTitle>
             <EmailPasswordInput
               name="name"
               type="email"

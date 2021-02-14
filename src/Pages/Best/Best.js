@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import Frame from "./Components/Frame/Frame";
-import { useHistory, useLocation, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { BEST_SIGNUP, BEST_SIGNUP_QUESTION } from "../../config";
 import { Button } from "../Login/Components/Button/Buttons";
 
@@ -15,9 +15,9 @@ function Best(props) {
 
   const history = useHistory();
 
-  const getBestQuestion = () => {
+  const getBestQuestion = useCallback(() => {
     return axios.get(`${BEST_SIGNUP_QUESTION}/${nextValue}`);
-  };
+  }, [nextValue]);
 
   const getBestSignup = () => {
     return axios.get(BEST_SIGNUP);
@@ -50,7 +50,7 @@ function Best(props) {
         alert(err);
       });
     return () => setLoading(loading);
-  }, []);
+  }, [getBestQuestion, loading]);
 
   return (
     <>
