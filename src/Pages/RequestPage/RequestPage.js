@@ -20,7 +20,7 @@ export default RequestPage;
 
 const RequestPaged = styled.div`
   width: 1100px;
-  height: 100vh;
+  height: 100%;
   margin: 30px auto;
 `;
 

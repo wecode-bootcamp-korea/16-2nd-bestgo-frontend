@@ -9,9 +9,9 @@ class RequsetList extends Component {
   };
 
   componentDidMount() {
-    fetch(`${SERVER_SERVICE}?limit=4`, {
+    fetch(`${SERVER_SERVICE}`, {
       headers: {
-        Authorization: localStorage.getItem("token"),
+        Authorization: localStorage.getItem("master_token"),
       },
     })
       .then((res) => res.json())

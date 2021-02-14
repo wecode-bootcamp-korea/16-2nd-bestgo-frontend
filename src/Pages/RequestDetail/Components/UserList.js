@@ -12,7 +12,7 @@ class UserList extends Component {
     const id = this.props.location.state.id;
     fetch(`${SERVER_DETAIL}=${id}`, {
       headers: {
-        Authorization: localStorage.getItem("token"),
+        Authorization: localStorage.getItem("master_token"),
       },
     })
       .then((res) => res.json())
@@ -21,7 +21,7 @@ class UserList extends Component {
 
   render() {
     const { userlist } = this.state;
-    console.log(userlist[0]?.requester);
+
     return (
       <UserLists>
         <UserListContainer>

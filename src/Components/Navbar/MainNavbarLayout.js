@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import BestLogo from "../../images/BestgoLogo.png";
 
 function MainNavbarLayout({ children }) {
   return (
     <NavbarLayout>
       <MainNavbarGroup>
         <Link to="/">
-          <BestgoLogo src={BestLogo} alt="BESTGO--LOGO" />
+          <BestgoLogo
+            src="https://project-bestgo.s3.ap-northeast-2.amazonaws.com/logo_image/bestgo.png"
+            alt="BESTGO--LOGO"
+          />
         </Link>
         {children}
       </MainNavbarGroup>
