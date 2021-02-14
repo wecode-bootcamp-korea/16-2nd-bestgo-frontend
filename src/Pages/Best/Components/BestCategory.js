@@ -1,7 +1,6 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import styled from "styled-components";
 import Frame from "../Components/Frame/Frame";
 import { BEST_SIGNUP, BEST_SIGNUP_QUESTION } from "../../../config";
 
@@ -24,13 +23,13 @@ function BestCategory(props) {
 
   const history = useHistory();
 
-  const getBestQuestion = () => {
+  const getBestQuestion = useCallback(() => {
     return axios.get(`${BEST_SIGNUP_QUESTION}/${nextQuestionValue}`);
-  };
+  }, [nextQuestionValue]);
 
-  const getBestCategory = () => {
+  const getBestCategory = useCallback(() => {
     return axios.get(BEST_SIGNUP + `?category=[${nextSelectValue}]`);
-  };
+  }, [nextSelectValue]);
 
   useEffect(() => {
     axios
@@ -44,7 +43,7 @@ function BestCategory(props) {
       .catch((err) => {
         alert(err);
       });
-  }, []);
+  }, [getBestCategory, getBestQuestion]);
 
   const nextButton = () => {
     history.push({

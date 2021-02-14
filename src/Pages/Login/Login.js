@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import Card from "./Components/Card/Card";
 import EmailPasswordInput from "./Components/Input/EmailPasswordInput";
 import Buttons from "./Components/Button/Buttons";
 import { KakaoSocialLogin } from "./Components/Social/KakaoSocialLogin";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SIGNIN_API } from "../../config";
 
 export default function Login() {
@@ -17,6 +18,7 @@ export default function Login() {
   const [onBlurHasValue, setOnBlurHasValue] = useState(false);
   const [buttonsEmailHasValue, setButtonsEmailHasValue] = useState(false);
   const [buttonsPwHasValue, setButtonsPwHasValue] = useState(false);
+
   const history = useHistory();
 
   const handleUpdateValue = (e) => {
@@ -57,6 +59,10 @@ export default function Login() {
       .then((res) => {
         alert("최고에 오신걸 환영합니다.");
         localStorage.setItem("token", res.data.TOKEN);
+        history.push({
+          pathname: "/",
+          state: { email },
+        });
         window.location.replace("/");
       })
       .catch((error) => {

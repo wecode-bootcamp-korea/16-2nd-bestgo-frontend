@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Main, Title, FormGroup, FormTitle } from "../../Login/Login";
 import { ButtonStyled } from "../../Login/Components/Button/Buttons";
@@ -27,6 +26,7 @@ function BestSignup() {
       .then((res) => {
         alert("최고 가입을 완료하였습니다!");
         localStorage.setItem("master_token", res.data.master_token);
+        localStorage.removeItem("token");
         window.location.replace("/");
       })
       .catch((err) => {
